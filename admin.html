@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MaBoutique — Administration</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">🛒 MaBoutique</a>
+    <nav>
+      <a href="/">Boutique</a>
+      <a href="/admin.html">Administration</a>
+      <a href="/cart.html">Panier <span id="cart-count" class="badge">0</span></a>
+    </nav>
+  </header>
+  <main>
+    <h1>Administration</h1>
+
+    <h2>Catégories</h2>
+    <div class="panel">
+      <ul id="category-list"></ul>
+      <form id="category-form" class="form-grid">
+        <div>
+          <label for="cat-name">Nouvelle catégorie</label>
+          <input id="cat-name" name="name" required>
+        </div>
+        <div style="align-self:end"><button class="btn" type="submit">Ajouter</button></div>
+      </form>
+    </div>
+
+    <h2>Produits</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Produit</th><th>Catégorie</th><th>Prix</th><th>Stock</th><th>Actions</th></tr></thead>
+        <tbody id="product-rows"></tbody>
+      </table>
+    </div>
+
+    <h2 id="form-title">Ajouter un produit</h2>
+    <form id="product-form" class="panel">
+      <input type="hidden" name="product_id">
+      <div class="form-grid">
+        <div><label for="name">Nom</label><input id="name" name="name" required></div>
+        <div><label for="price">Prix (€)</label><input id="price" name="price" type="number" step="0.01" min="0" required></div>
+        <div><label for="stock">Stock</label><input id="stock" name="stock" type="number" min="0" value="0" required></div>
+        <div><label for="emoji">Emoji</label><input id="emoji" name="emoji" maxlength="4" placeholder="📦"></div>
+        <div><label for="category_id">Catégorie</label><select id="category_id" name="category_id" required></select></div>
+        <div class="full"><label for="description">Description</label><textarea id="description" name="description" rows="2"></textarea></div>
+      </div>
+      <p>
+        <button class="btn" type="submit">Enregistrer</button>
+        <button class="btn secondary" type="button" id="cancel-edit" hidden>Annuler la modification</button>
+      </p>
+    </form>
+
+    <h2>Commandes</h2>
+    <div class="panel" id="orders"></div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

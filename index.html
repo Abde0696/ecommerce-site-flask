@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MaBoutique — Catalogue</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">🛒 MaBoutique</a>
+    <nav>
+      <a href="/">Boutique</a>
+      <a href="/admin.html">Administration</a>
+      <a href="/cart.html">Panier <span id="cart-count" class="badge">0</span></a>
+    </nav>
+  </header>
+  <main>
+    <h1>Nos produits</h1>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Rechercher un produit…" aria-label="Rechercher">
+      <div id="categories" class="chips"></div>
+    </div>
+    <div id="products" class="grid"></div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/shop.js"></script>
+</body>
+</html>

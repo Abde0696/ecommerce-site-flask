@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MaBoutique — Panier</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">🛒 MaBoutique</a>
+    <nav>
+      <a href="/">Boutique</a>
+      <a href="/admin.html">Administration</a>
+      <a href="/cart.html">Panier <span id="cart-count" class="badge">0</span></a>
+    </nav>
+  </header>
+  <main id="cart-page">
+    <h1>Mon panier</h1>
+    <div id="cart-content"></div>
+
+    <section id="checkout" class="panel" hidden>
+      <h2 style="margin-top:0">Valider ma commande</h2>
+      <form id="checkout-form">
+        <div class="form-grid">
+          <div>
+            <label for="customer_name">Nom complet</label>
+            <input id="customer_name" name="customer_name" required>
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+        </div>
+        <p><button class="btn" type="submit">Confirmer la commande</button></p>
+      </form>
+    </section>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/cart.js"></script>
+</body>
+</html>
